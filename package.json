@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test --watch=false",
-    "test-firestore-rules": "jasmine ./firestore-rules.spec.ts",
+    "test-firestore-rules": "firebase emulators:exec --only firestore \"jasmine ./firestore.rules.spec.ts\"",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
