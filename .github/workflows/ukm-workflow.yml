@@ -1,0 +1,14 @@
+name: UKM Workflow
+
+on: [push]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: NPM Install
+        run: 'npm install'
+      - name: Run ng lint
+        run: 'npm run lint'
+
