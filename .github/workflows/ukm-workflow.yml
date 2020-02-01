@@ -12,8 +12,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: npm install
-      - run: npm run lint
-      - run: npm run test-firestore-rules
-      - run: npm test
-      - run: npm run build
+      - name: Install Dependencies
+        run: npm install
+      - name: Lint
+        run: npm run lint
+      - name: Test Firestore Rules
+        run: npm run test-firestore-rules
+      - name: Test Specs
+        run: npm test
+      - name: Build
+        run: npm run build
