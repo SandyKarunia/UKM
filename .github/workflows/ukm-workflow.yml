@@ -18,7 +18,7 @@ jobs:
         run: npm run lint
       - name: Test Firestore Rules
         run: npm run test-firestore-rules
-      - name: Test Specs
-        run: npm test
+      - name: Test with Headless Chrome
+        run: npm run test-headless
       - name: Build
         run: npm run build
