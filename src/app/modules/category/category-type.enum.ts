@@ -1,4 +1,4 @@
-enum CategoryType {
+export enum CategoryType {
   INCOME,
   EXPENSE,
   TRANSFER_IN,
