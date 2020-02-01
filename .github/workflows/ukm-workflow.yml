@@ -16,3 +16,4 @@ jobs:
       - run: npm run lint
       - run: npm run test-firestore-rules
       - run: npm test
+      - run: npm run build
