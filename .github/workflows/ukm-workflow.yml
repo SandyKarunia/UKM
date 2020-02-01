@@ -7,10 +7,10 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - name: Current directory files
-        run: ls
-      - name: NPM Install
-        run: 'npm install'
-      - name: Run ng lint
-        run: 'npm run lint'
-
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm install
+      - run: npm run lint
