@@ -3,8 +3,8 @@ name: UKM Workflow
 on: [push]
 
 jobs:
-  lint:
-    name: Lint
+  lint-test-build:
+    name: Lint, Test, and Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,3 +14,5 @@ jobs:
           node-version: 12.x
       - run: npm install
       - run: npm run lint
+      - run: npm run test-firestore-rules
+      - run: npm test

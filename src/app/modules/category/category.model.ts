@@ -1,3 +1,5 @@
+import {CategoryType} from './category-type.enum';
+
 export class CategoryModel {
   /**
    * Identifier of a category model.
@@ -41,8 +43,6 @@ export class CategoryModel {
   /**
    * A flag which determines whether this category is active or not. When the user is deleting the category, it will flip this flag from
    * {@code false} to {@code true} (soft-delete).
-   *
-   * qlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeqqlkwjeq
    */
   isDeleted: boolean;
 }
