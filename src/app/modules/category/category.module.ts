@@ -6,7 +6,5 @@ import { NgModule } from '@angular/core';
   imports: [
     CommonModule
   ],
-  exports: [
-  ],
 })
 export class CategoryModule { }

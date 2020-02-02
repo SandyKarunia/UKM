@@ -4,20 +4,20 @@ export class CategoryModel {
   /**
    * Identifier of a category model.
    */
-  public id: string;
+  id: string;
 
   /**
    * Identifier of a user (owner) of the category. Only the owner of a category can modify the category.
    *
    * If the value doesn't exist, the category belongs to all users.
    */
-  public userId?: string;
+  userId?: string;
 
   /**
    * Type of the category which might be useful to group some categories in summary (e.g. group all INCOME category).
    * For available types list, see {@link CategoryType}.
    */
-  public type: CategoryType;
+  type: CategoryType;
 
   /**
    * Identifier of a category which has parent-child relationship with current category instance. This is useful for keeping the granular
@@ -28,21 +28,21 @@ export class CategoryModel {
    *
    * If the value doesn't exist, the category is a root category (i.e. no parent).
    */
-  public parentCategoryId?: string;
+  parentCategoryId?: string;
 
   /**
    * Name of the category.
    */
-  public name: string;
+  name: string;
 
   /**
    * Optional description of the category.
    */
-  public description?: string;
+  description?: string;
 
   /**
    * A flag which determines whether this category is active or not. When the user is deleting the category, it will flip this flag from
    * {@code false} to {@code true} (soft-delete).
    */
-  public isDeleted: boolean;
+  isDeleted: boolean;
 }

@@ -9,7 +9,7 @@ export class WalletComponent implements OnInit {
 
   constructor() { }
 
-  public ngOnInit() {
+  ngOnInit() {
   }
 
 }
