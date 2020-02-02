@@ -30,3 +30,20 @@ $ukm-theme: mat-light-theme($ukm-primary, $ukm-accent, $ukm-warn);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-nav-list{
+  padding-top:0 !important;
+  overflow: hidden;
+}
+mat-sidenav{
+  width: 20vw;
+}
+.sideNavHeader{
+  padding: 10px 5px !important;
+  background-color:  map-get($ukm-primary, 500);
+  color: white !important;
+}
+.bottomStick{
+  position:absolute !important;
+  bottom:0 !important;
+}
