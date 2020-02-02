@@ -1,0 +1,24 @@
+name: UKM Workflow
+
+on: [push]
+
+jobs:
+  lint-test-build:
+    name: Lint, Test, and Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Dependencies
+        run: npm install
+      - name: Lint
+        run: npm run lint
+      - name: Test Firestore Rules
+        run: npm run test-firestore-rules
+      - name: Test with Headless Chrome
+        run: npm run test-headless
+      - name: Build
+        run: npm run build
