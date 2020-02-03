@@ -1,4 +1,4 @@
-import {CategoryType} from './category-type.enum';
+import { CategoryType } from './category-type.enum';
 
 export class CategoryModel {
   /**

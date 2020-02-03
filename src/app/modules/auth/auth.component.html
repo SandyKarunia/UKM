@@ -1,0 +1,7 @@
+<div *ngIf="afAuth.user | async as user; else showLogin">
+    <span>Hi, {{ user.displayName }}!</span>
+    <button class="logout-button" mat-button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+    <button mat-raised-button (click)="login()"><img src="assets/google-logo.png" /> Sign in with Google</button>
+</ng-template>

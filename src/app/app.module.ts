@@ -1,16 +1,17 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatSidenavModule,
+  MatButtonModule,
   MatListModule,
   MatMenuModule,
-  MatButtonModule,
+  MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,10 @@ import {
     MatListModule,
     MatMenuModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+
+    // UKM modules
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
