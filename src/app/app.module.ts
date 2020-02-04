@@ -9,14 +9,18 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// UKM Modules
 import { AuthModule } from './modules/auth/auth.module';
+import { CategoryModule } from './modules/category/category.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { WalletModule } from './modules/wallet/wallet.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,9 @@ import { AuthModule } from './modules/auth/auth.module';
 
     // UKM modules
     AuthModule,
+    CategoryModule,
+    DashboardModule,
+    WalletModule
   ],
   providers: [],
   bootstrap: [AppComponent],

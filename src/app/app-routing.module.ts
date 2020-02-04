@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CategoryComponent } from './category/category.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { WalletComponent } from './wallet/wallet.component';
+import { DashboardComponent } from './modules/dashboard/dashboard-component/dashboard.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+
+import { WalletComponent } from './modules/wallet/wallet-component/wallet.component';
+import { WalletModule } from './modules/wallet/wallet.module';
+
+import { CategoryComponent } from './modules/category/category-component/category.component';
+import { CategoryModule } from './modules/category/category.module';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -12,8 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), CategoryModule, DashboardModule, WalletModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [DashboardComponent, WalletComponent, CategoryComponent];
