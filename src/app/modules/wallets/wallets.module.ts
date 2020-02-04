@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { WalletComponent } from './wallet-component/wallet.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 @NgModule({
   declarations: [ WalletComponent ],
@@ -10,4 +10,4 @@ import { WalletComponent } from './wallet-component/wallet.component';
   ],
   exports: [ WalletComponent ],
 })
-export class WalletModule { }
+export class WalletsModule { }

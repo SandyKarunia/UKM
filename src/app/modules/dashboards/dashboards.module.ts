@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { DashboardComponent } from './dashboard-component/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [ DashboardComponent ],
@@ -10,4 +10,4 @@ import { DashboardComponent } from './dashboard-component/dashboard.component';
   ],
   exports: [ DashboardComponent ]
 })
-export class DashboardModule { }
+export class DashboardsModule { }

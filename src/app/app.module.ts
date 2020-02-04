@@ -14,9 +14,9 @@ import { AppComponent } from './app.component';
 
 // UKM Modules
 import { AuthModule } from './modules/auth/auth.module';
-import { CategoryModule } from './modules/category/category.module';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { WalletModule } from './modules/wallet/wallet.module';
+import { CategoriesModule } from './modules/categories/categories.module';
+import { DashboardsModule } from './modules/dashboards/dashboards.module';
+import { WalletsModule } from './modules/wallets/wallets.module';
 
 @NgModule({
   declarations: [
@@ -34,9 +34,9 @@ import { WalletModule } from './modules/wallet/wallet.module';
 
     // UKM modules
     AuthModule,
-    CategoryModule,
-    DashboardModule,
-    WalletModule
+    CategoriesModule,
+    DashboardsModule,
+    WalletsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
