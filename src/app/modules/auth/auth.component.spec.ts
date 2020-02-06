@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from 'src/environments/environment';
+import { getFirebaseConfig } from 'src/environments/environment';
 import { AuthComponent } from './auth.component';
 
 describe('AuthComponent', () => {
@@ -13,7 +13,7 @@ describe('AuthComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AuthComponent],
       imports: [
-        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireModule.initializeApp(getFirebaseConfig()),
         AngularFireAuthModule,
       ]
     })
