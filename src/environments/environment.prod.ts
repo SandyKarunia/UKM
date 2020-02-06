@@ -7,7 +7,7 @@ export const environment = {
     projectId: 'uangkukemana',
     storageBucket: 'uangkukemana.appspot.com',
     messagingSenderId: '897714515879',
-    appId: '1:897714515879:web:bdc1a787f0cae3e0c51082',
-    measurementId: 'G-EJ8MR4WC3E'
+    appId: '1:897714515879:web:4b2e58046cce3c22c51082',
+    measurementId: 'G-EPB4DHJLBC'
   },
 };
