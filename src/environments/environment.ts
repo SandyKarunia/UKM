@@ -3,12 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 import { FirebaseOptions } from '@angular/fire';
-import firebaseConfig from './firebase-config.json';
+// uncomment the following import for development
+// import firebaseConfig from './firebase-config.json';
 
 export const environment = {
   production: false,
   getFirebaseConfig: (): FirebaseOptions => {
-    return firebaseConfig;
+    // uncomment the following return for development
+    // return firebaseConfig;
+    return {};
   },
 };
 
