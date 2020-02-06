@@ -1,6 +1,6 @@
 import { CategoryType } from './category-type.enum';
 
-export class CategoriesModel {
+export class CategoryModel {
   /**
    * Identifier of a category model.
    */
