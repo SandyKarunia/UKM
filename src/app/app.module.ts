@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import {
   MatButtonModule,
+  MatCardModule,
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +32,7 @@ import { WalletsModule } from './modules/wallets/wallets.module';
     MatMenuModule,
     MatButtonModule,
     MatToolbarModule,
+    MatCardModule,
 
     // UKM modules
     AuthModule,
