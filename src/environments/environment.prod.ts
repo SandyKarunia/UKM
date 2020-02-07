@@ -1,13 +1,17 @@
+import { FirebaseOptions } from '@angular/fire';
+
 export const environment = {
   production: true,
-  firebase: {
-    apiKey: 'AIzaSyCuA9X0o22Wq_C8fz9KZqSJ9EyuM7ggr8c',
-    authDomain: 'uangkukemana.firebaseapp.com',
-    databaseURL: 'https://uangkukemana.firebaseio.com',
-    projectId: 'uangkukemana',
-    storageBucket: 'uangkukemana.appspot.com',
-    messagingSenderId: '897714515879',
-    appId: '1:897714515879:web:4b2e58046cce3c22c51082',
-    measurementId: 'G-EPB4DHJLBC'
-  },
+  get firebase(): FirebaseOptions {
+    return {
+      apiKey: '{{UKM_FIREBASE_API_KEY}}',
+      authDomain: '{{UKM_FIREBASE_AUTH_DOMAIN}}',
+      databaseURL: '{{UKM_FIREBASE_DATABASE_URL}}',
+      projectId: '{{UKM_FIREBASE_PROJECT_ID}}',
+      storageBucket: '{{UKM_FIREBASE_STORAGE_BUCKET}}',
+      messagingSenderId: '{{UKM_FIREBASE_MESSAGING_SENDER_ID}}',
+      appId: '{{UKM_FIREBASE_APP_ID}}',
+      measurementId: '{{UKM_FIREBASE_MEASUREMENT_ID}}',
+    };
+  }
 };
