@@ -10,14 +10,14 @@ import { WalletsModule } from './modules/wallets/wallets.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { CategoryComponent } from './modules/categories/category/category.component';
 
-import { LoginComponent } from './page/login/login.component';
+import { LoginPageComponent } from './page/login/login.component';
 import { PageModule } from './page/page.module';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
+  { path: '', component: LoginPageComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'wallet', component: WalletComponent },
-  { path: 'category', component: CategoryComponent}
+  { path: 'category', component: CategoryComponent }
 ];
 
 @NgModule({

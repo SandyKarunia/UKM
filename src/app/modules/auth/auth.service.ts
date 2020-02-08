@@ -5,10 +5,12 @@ import { AngularFireAuth } from '@angular/fire/auth';
   providedIn: 'root'
 })
 export class AuthService {
+  afAuth: AngularFireAuth;
+  constructor(afAuth: AngularFireAuth) {
+    this.afAuth = afAuth;
+   }
 
-  constructor(public afAuth: AngularFireAuth) { }
-
-  isLoggedIn() {
-    return this.afAuth.auth.currentUser != undefined;
+  isLoggedIn(): boolean {
+    return this.afAuth.auth.currentUser !== null;
   }
 }

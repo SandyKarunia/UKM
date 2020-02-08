@@ -15,7 +15,7 @@ export class AuthComponent {
   }
 
   async login(): Promise<auth.UserCredential> {
-    this.afAuth.auth.setPersistence(auth.Auth.Persistence.LOCAL);
+    await this.afAuth.auth.setPersistence(auth.Auth.Persistence.LOCAL);
 
     return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }

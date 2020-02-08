@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { AuthService } from '../../modules/auth/auth.service';
+import { AuthService } from 'src/app/modules/auth/auth.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'ukm-login-page',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginPageComponent implements OnInit {
+  private readonly router: Router;
+  private readonly auth: AuthService;
 
-  constructor(private readonly router: Router, public auth: AuthService) { }
+  constructor(router: Router, auth: AuthService) {
+    this.router = router;
+    this.auth = auth;
+  }
 
-  ngOnInit() {
+  async ngOnInit(): Promise<void> {
     if (!this.auth.isLoggedIn()) {
-      this.router.navigateByUrl('/dashboard');
+      await this.router.navigateByUrl('/dashboard');
     }
   }
 }
