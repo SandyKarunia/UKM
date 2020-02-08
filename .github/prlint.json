@@ -1,7 +1,8 @@
 {
     "title": [
         {
-            "pattern": "^(fix|feat|chore|docs):.+"
+            "pattern": "^(fix|feat|chore|docs): .+",
+            "message": "Your title needs to be prefixed with one of [\"fix: \", \"feat: \", \"chore: \", \"docs: \"]"
         }
     ]
 }
