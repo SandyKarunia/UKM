@@ -1,0 +1,2 @@
+PR_TITLE_REGEX: /(fix|feat|chore|docs):.+/
+COMMIT_MESSAGE_REGEX: /(.*)/
