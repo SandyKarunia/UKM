@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-text = "{
+text="{
     apiKey: 'FAKE_KEY',
     authDomain: 'FAKE_AUTH_DOMAIN',
     databaseURL: 'FAKE_DB_URL',
