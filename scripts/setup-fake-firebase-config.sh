@@ -13,4 +13,4 @@ text = `{
     measurementId: 'FAKE_MEASUREMENT_ID'
 }`;
 
-echo ${text} > ./src/environments/firebase-config.json
+echo "${text}" > ./src/environments/firebase-config.json
