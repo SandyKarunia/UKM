@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-text = `{
+text = "{
     apiKey: 'FAKE_KEY',
     authDomain: 'FAKE_AUTH_DOMAIN',
     databaseURL: 'FAKE_DB_URL',
@@ -11,6 +11,6 @@ text = `{
     messagingSenderId: 'FAKE_MESSAGING_SENDER_ID',
     appId: 'FAKE_APP_ID',
     measurementId: 'FAKE_MEASUREMENT_ID'
-}`;
+}";
 
 echo "${text}" > ./src/environments/firebase-config.json
