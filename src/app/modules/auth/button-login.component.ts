@@ -3,11 +3,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase';
 
 @Component({
-  selector: 'ukm-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'ukm-button-login',
+  templateUrl: './button-login.component.html',
+  styleUrls: ['./button-login.component.scss']
 })
-export class LoginComponent {
+export class ButtonLoginComponent {
   private readonly afAuth: AngularFireAuth;
 
   constructor(afAuth: AngularFireAuth) {
