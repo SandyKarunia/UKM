@@ -6,10 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { environment } from 'src/environments/environment';
 import { AuthComponent } from './auth.component';
-import { LoginComponent } from './login.component';
+import { ButtonLoginComponent } from './button-login.component';
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent],
+  declarations: [AuthComponent, ButtonLoginComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -17,6 +17,6 @@ import { LoginComponent } from './login.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
   ],
-  exports: [AuthComponent, LoginComponent],
+  exports: [AuthComponent, ButtonLoginComponent],
 })
 export class AuthModule { }
