@@ -12,12 +12,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "lint-staged": {
-    "*.{ts,js,sccs,json}": [
-      "ng lint --fix",
-      "git add"
-    ]
-  },
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
     "@angular/animations": "~9.0.0",
     "@angular/cdk": "~9.0.0",
