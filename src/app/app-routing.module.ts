@@ -10,8 +10,8 @@ import { WalletsModule } from './modules/wallets/wallets.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { CategoryComponent } from './modules/categories/category/category.component';
 
-import { PageModule } from './page/page.module';
 import { LoginComponent } from './page/login/login.component';
+import { PageModule } from './page/page.module';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
