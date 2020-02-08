@@ -32,6 +32,10 @@
       true,
       "kebab-case"
     ],
+    "linebreak-style": [
+      true,
+      "LF"
+    ],
     "max-classes-per-file": [
       true,
       1
