@@ -11,7 +11,7 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoginComponent],
+      declarations: [ButtonLoginComponent],
       imports: [
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
