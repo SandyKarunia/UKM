@@ -6,12 +6,12 @@ describe('WalletComponent', () => {
   let component: WalletComponent;
   let fixture: ComponentFixture<WalletComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ WalletComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [WalletComponent]
     })
-    .compileComponents();
-  }));
+      .compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WalletComponent);
@@ -19,7 +19,8 @@ describe('WalletComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create', async () => {
+    await expect(component)
+      .toBeTruthy();
   });
 });

@@ -1,24 +1,26 @@
 {
-  "extends": "tslint:recommended",
+  "extends": "tslint:all",
   "rules": {
     "array-type": false,
     "arrow-parens": false,
+    "await-promise": false,
     "deprecation": {
       "severity": "warning"
     },
+    "completed-docs": false,
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "ukm",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "ukm",
       "kebab-case"
     ],
     "import-blacklist": [
@@ -26,6 +28,10 @@
       "rxjs/Rx"
     ],
     "interface-name": true,
+    "file-name-casing": [
+      true,
+      "kebab-case"
+    ],
     "max-classes-per-file": [
       true,
       1
@@ -56,13 +62,22 @@
       "trace"
     ],
     "no-empty": false,
-    "no-inferrable-types": [
+    "no-implicit-dependencies": [
       true,
-      "ignore-params"
+      [
+        "src"
+      ]
     ],
+    "no-inferrable-types": false,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
+    "no-relative-imports": [
+      true,
+      "allow-siblings"
+    ],
+    "no-submodule-imports": false,
     "no-switch-case-fall-through": true,
+    "no-unsafe-any": false,
     "no-unused-variable": false,
     "no-var-requires": false,
     "object-literal-key-quotes": [
@@ -90,6 +105,7 @@
     "use-pipe-transform-interface": true
   },
   "rulesDirectory": [
-    "codelyzer"
+    "codelyzer",
+    "tslint-microsoft-contrib"
   ]
 }
