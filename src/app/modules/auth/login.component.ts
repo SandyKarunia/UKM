@@ -3,16 +3,19 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase';
 
 @Component({
-  selector: 'app-login',
+  selector: 'ukm-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  private readonly afAuth: AngularFireAuth;
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(afAuth: AngularFireAuth) {
+    this.afAuth = afAuth;
+  }
 
-  login() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  async login(): Promise<auth.UserCredential> {
+    return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
 }

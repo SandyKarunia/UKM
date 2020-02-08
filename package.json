@@ -41,7 +41,6 @@
     "@firebase/testing": "^0.16.6",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "firebase-tools": "^7.12.1",
     "jasmine-core": "~3.4.0",
@@ -55,6 +54,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
+    "tslint-microsoft-contrib": "^6.2.0",
     "typescript": "~3.7.5"
   }
 }

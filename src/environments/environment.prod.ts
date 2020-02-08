@@ -1,6 +1,6 @@
 import { FirebaseOptions } from '@angular/fire';
 
-export const environment = {
+export const environment: { production: boolean; firebase: FirebaseOptions } = {
   production: true,
   get firebase(): FirebaseOptions {
     return {
