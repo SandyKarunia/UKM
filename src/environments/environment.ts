@@ -1,4 +1,6 @@
 import { FirebaseOptions } from '@angular/fire';
+// tslint:disable-next-line
+import firebaseConfig from './firebase-config.json';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
@@ -7,16 +9,7 @@ import { FirebaseOptions } from '@angular/fire';
 export const environment: { production: boolean; firebase: FirebaseOptions } = {
   production: false,
   get firebase(): FirebaseOptions {
-    return {
-      apiKey: '{{UKM_FIREBASE_API_KEY}}',
-      authDomain: '{{UKM_FIREBASE_AUTH_DOMAIN}}',
-      databaseURL: '{{UKM_FIREBASE_DATABASE_URL}}',
-      projectId: '{{UKM_FIREBASE_PROJECT_ID}}',
-      storageBucket: '{{UKM_FIREBASE_STORAGE_BUCKET}}',
-      messagingSenderId: '{{UKM_FIREBASE_MESSAGING_SENDER_ID}}',
-      appId: '{{UKM_FIREBASE_APP_ID}}',
-      measurementId: '{{UKM_FIREBASE_MEASUREMENT_ID}}',
-    };
+    return firebaseConfig;
   }
 };
 
