@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item class="sideNavHeader">
+        <h2>
+          Name
+        </h2>
+      </mat-list-item>
+      <a mat-list-item href='dashboard'>
+        Dashboard
+      </a>
+      <a mat-list-item href='wallet'>
+        Wallet
+      </a>
+      <a mat-list-item href='category'>
+        Category
+      </a>
+      <a mat-list-item href='logout' class="bottomStick">
+        Log Out
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet name="sidenav">
+    </router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
