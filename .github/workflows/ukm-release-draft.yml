@@ -1,0 +1,17 @@
+name: UKM Release Draft
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update-release-draft:
+    name: "Update Release Draft"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@v5.6.1
+        with:
+          config-name: release-drafter.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
