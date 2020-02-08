@@ -3,6 +3,14 @@ name: UKM Workflow
 on: [push]
 
 jobs:
+  update-release-draft:
+    name: "Update Release Draft"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@v5.6.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   lint-test-build:
     name: Lint, Test, and Build
     runs-on: ubuntu-latest
