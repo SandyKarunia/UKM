@@ -2,10 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import {
-  MatButtonModule,
-  MatCardModule,
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { environment } from 'src/environments/environment';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login.component';
