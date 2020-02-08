@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: cat .github/release-drafter.yml
       - uses: release-drafter/release-drafter@v5.6.1
         with:
           config-name: release-drafter.yml
