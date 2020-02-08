@@ -1,0 +1,7 @@
+{
+    "title": [
+        {
+            "pattern": "^(fix|feat|chore|docs):.+"
+        }
+    ]
+}
