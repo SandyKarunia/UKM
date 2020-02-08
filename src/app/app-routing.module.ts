@@ -13,7 +13,7 @@ import { CategoryComponent } from './modules/categories/category/category.compon
 import { LoginPageComponent } from './page/login/login.component';
 import { PageModule } from './page/page.module';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: LoginPageComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'wallet', component: WalletComponent },

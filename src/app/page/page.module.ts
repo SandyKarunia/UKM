@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { LoginPageComponent } from './login/login.component';
 
+import { RouterModule } from '@angular/router';
 import { AuthModule } from 'src/app/modules/auth/auth.module';
 
 @NgModule({
@@ -10,6 +11,7 @@ import { AuthModule } from 'src/app/modules/auth/auth.module';
   imports: [
     CommonModule,
     AuthModule,
+    RouterModule
   ],
   exports: [LoginPageComponent]
 })
