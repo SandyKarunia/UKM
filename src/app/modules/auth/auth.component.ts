@@ -8,7 +8,7 @@ import { auth } from 'firebase';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent {
-  private readonly afAuth: AngularFireAuth;
+  readonly afAuth: AngularFireAuth;
 
   constructor(afAuth: AngularFireAuth) {
     this.afAuth = afAuth;
