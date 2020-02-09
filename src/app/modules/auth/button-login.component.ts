@@ -20,15 +20,15 @@ export class ButtonLoginComponent {
   async login(): Promise<void> {
     await this.afAuth.auth.setPersistence(auth.Auth.Persistence.LOCAL);
 
-    return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
-      .then(async () => {
-        await this.router.navigateByUrl('app/dashboard');
-      })
-      .catch((error) => {
+    let authResult = await this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
+      .catch(() => {
         // for now just do console.log
-        console.error(error);
         console.log('fail to login');
       });
+
+    if (authResult !== null) {
+      await this.router.navigateByUrl('app/dashboard');
+    }
   }
 
 }

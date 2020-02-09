@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   {
     path: 'app', component: SidenavComponent, children: [
-      { path: 'dashboard', component: DashboardComponent, outlet: 'sidenav' },
+      { path: 'dashboard', component: DashboardComponent },
       { path: 'wallet', component: WalletComponent },
       { path: 'category', component: CategoryComponent }
     ],
