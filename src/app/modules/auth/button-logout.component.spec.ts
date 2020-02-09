@@ -1,5 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { RouterTestingModule } from '@angular/router/testing';
+import { routes } from 'src/app/app-routing.module';
+import { environment } from 'src/environments/environment';
 import { ButtonLogoutComponent } from './button-logout.component';
 
 describe('ButtonLogoutComponent', () => {
@@ -8,7 +13,12 @@ describe('ButtonLogoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ButtonLogoutComponent]
+      declarations: [ButtonLogoutComponent],
+      imports: [
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAuthModule,
+        RouterTestingModule.withRoutes(routes),
+      ]
     })
       .compileComponents();
   });
