@@ -16,12 +16,13 @@ export class ButtonLogoutComponent {
     this.router = router;
   }
 
-  async logout(): Promise<void> {
+  async logout(): Promise<boolean> {
     await this.afAuth.auth.signOut()
-      .then(async () => {
-        console.log('run logout and navigate');
-        await this.router.navigateByUrl('/');
+      .catch((): void => {
+        console.log('error while logging out');
       });
+
+    return this.router.navigateByUrl('/');
   }
 
 }

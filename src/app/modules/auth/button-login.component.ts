@@ -21,7 +21,7 @@ export class ButtonLoginComponent {
     await this.afAuth.auth.setPersistence(auth.Auth.Persistence.LOCAL);
 
     await this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
-      .catch(() => {
+      .catch((): void => {
         // For now just do console.log
         console.log('fail to login');
       });

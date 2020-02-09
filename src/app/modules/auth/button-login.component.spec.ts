@@ -7,7 +7,7 @@ import { routes } from 'src/app/app-routing.module';
 import { environment } from 'src/environments/environment';
 import { ButtonLoginComponent } from './button-login.component';
 
-describe('ButtonLoginComponent', () => {
+describe('ButtonLoginComponent', (): void => {
   let component: ButtonLoginComponent;
   let fixture: ComponentFixture<ButtonLoginComponent>;
 

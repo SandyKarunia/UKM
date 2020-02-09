@@ -7,11 +7,11 @@ import { routes } from 'src/app/app-routing.module';
 import { environment } from 'src/environments/environment';
 import { ButtonLogoutComponent } from './button-logout.component';
 
-describe('ButtonLogoutComponent', () => {
+describe('ButtonLogoutComponent', (): void => {
   let component: ButtonLogoutComponent;
   let fixture: ComponentFixture<ButtonLogoutComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
       declarations: [ButtonLogoutComponent],
       imports: [

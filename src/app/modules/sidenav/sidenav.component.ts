@@ -16,7 +16,7 @@ export class SidenavComponent {
 
     if (!this.authService.isLoggedIn()) {
       this.router.navigateByUrl('/')
-        .catch(() => {
+        .catch((): void => {
           // For now just console.log
           console.log('failed to navigate to login page');
         });
