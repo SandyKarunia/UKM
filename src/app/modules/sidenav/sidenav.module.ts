@@ -7,14 +7,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { SidenavRoutingModule } from './sidenav-routing.module';
+import { RouterModule } from '@angular/router';
 import { SidenavComponent } from './sidenav.component';
 
 @NgModule({
   declarations: [SidenavComponent],
   imports: [
     CommonModule,
-    SidenavRoutingModule,
+    RouterModule,
 
     MatSidenavModule,
     MatListModule,
