@@ -5,3 +5,8 @@ mat-sidenav-container {
 mat-sidenav-content{
   padding-left: 20px;
 }
+
+.bottomStick{
+  position:absolute !important;
+  bottom:0 !important;
+}

@@ -9,10 +9,10 @@ import { SidenavComponent } from './modules/sidenav/sidenav.component';
 import { WalletComponent } from './modules/wallets/wallet/wallet.component';
 
 export const routes: Routes = [
-  { path: '', component: LoginPageComponent },
+  { path: 'login', component: LoginPageComponent },
   {
     path: 'app', component: SidenavComponent, children: [
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent, outlet: 'sidenav' },
       { path: 'wallet', component: WalletComponent },
       { path: 'category', component: CategoryComponent }
     ],

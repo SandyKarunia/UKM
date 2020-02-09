@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { SidenavComponent } from './sidenav.component';
+import { AuthModule } from 'src/app/modules/auth/auth.module';
 
 @NgModule({
   declarations: [SidenavComponent],
@@ -22,6 +23,7 @@ import { SidenavComponent } from './sidenav.component';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    AuthModule
   ],
   exports: [SidenavComponent],
 })

@@ -19,6 +19,7 @@ export class LoginPageComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     if (!this.auth.isLoggedIn()) {
+      console.log('navigating to dashboard');
       await this.router.navigateByUrl('/app/dashboard');
     }
   }

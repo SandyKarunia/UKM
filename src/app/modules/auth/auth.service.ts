@@ -11,6 +11,8 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return this.afAuth.auth.currentUser !== null;
+    console.log(this.afAuth.auth.currentUser);
+
+    return this.afAuth.auth.currentUser === null;
   }
 }

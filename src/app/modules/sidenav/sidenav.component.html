@@ -15,14 +15,12 @@
       <a mat-list-item href='app/category'>
         Category
       </a>
-      <a mat-list-item href='logout' class="bottomStick">
-        Log Out
-      </a>
+      <ukm-button-logout></ukm-button-logout>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <router-outlet>
+    <router-outlet name="sidenav">
     </router-outlet>
   </mat-sidenav-content>
 
