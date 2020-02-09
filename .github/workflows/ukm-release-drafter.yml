@@ -1,7 +1,7 @@
 name: UKM Release Drafter
 
-on:	
-  push:	
+on:
+  push:
     branches:
       - master
 
