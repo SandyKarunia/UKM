@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase';
 import { Router } from '@angular/router';
+import { auth } from 'firebase';
 
 @Component({
   selector: 'ukm-button-login',
@@ -20,13 +20,14 @@ export class ButtonLoginComponent {
   async login(): Promise<void> {
     await this.afAuth.auth.setPersistence(auth.Auth.Persistence.LOCAL);
 
-    let authResult = await this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
+    await this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
       .catch(() => {
-        // for now just do console.log
+        // For now just do console.log
         console.log('fail to login');
       });
 
-    if (authResult !== null) {
+    if (this.afAuth.auth.currentUser !== null) {
+      console.log(this.afAuth.auth.currentUser);
       await this.router.navigateByUrl('app/dashboard');
     }
   }

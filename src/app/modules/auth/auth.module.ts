@@ -4,9 +4,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 import { environment } from 'src/environments/environment';
 import { ButtonLoginComponent } from './button-login.component';
-import { MatListModule } from '@angular/material/list';
 import { ButtonLogoutComponent } from './button-logout.component';
 
 @NgModule({

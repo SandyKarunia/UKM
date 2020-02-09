@@ -20,7 +20,7 @@ export class ButtonLogoutComponent {
     await this.afAuth.auth.signOut()
       .then(async () => {
         console.log('run logout and navigate');
-        await this.router.navigateByUrl('/login');
+        await this.router.navigateByUrl('/');
       });
   }
 
