@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonLogoutComponent } from './button-logout.component';
 
@@ -6,12 +6,12 @@ describe('ButtonLogoutComponent', () => {
   let component: ButtonLogoutComponent;
   let fixture: ComponentFixture<ButtonLogoutComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ButtonLogoutComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ButtonLogoutComponent]
     })
-    .compileComponents();
-  }));
+      .compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ButtonLogoutComponent);
@@ -19,7 +19,8 @@ describe('ButtonLogoutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create', async () => {
+    await expect(component)
+      .toBeTruthy();
   });
 });

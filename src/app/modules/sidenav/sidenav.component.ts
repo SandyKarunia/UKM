@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/modules/auth/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/modules/auth/auth.service';
 
 @Component({
   selector: 'ukm-app-sidenav',
