@@ -11,7 +11,7 @@ export class LoginPageComponent implements OnInit {
   private readonly router: Router;
   private readonly auth: AuthService;
 
-  constructor(router: Router, auth: AuthService) {
+  constructor(auth: AuthService) {
     this.router = router;
     this.auth = auth;
   }
