@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { CategoryComponent } from './category/category.component';
 
 @NgModule({
-  declarations: [ CategoryComponent ],
+  declarations: [CategoryComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AngularFirestoreModule,
   ],
-  exports: [ CategoryComponent ]
+  exports: [CategoryComponent]
 })
 export class CategoriesModule { }

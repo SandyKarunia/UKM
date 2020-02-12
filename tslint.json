@@ -94,6 +94,7 @@
       true,
       "single"
     ],
+    "strict-boolean-expressions": false,
     "trailing-comma": true,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
@@ -106,7 +107,15 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "require-const-for-all-caps",
+        "allow-leading-underscore"
+      ]
+    }
   },
   "rulesDirectory": [
     "codelyzer",
