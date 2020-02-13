@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { firestore } from 'firebase';
-import { CategoryType } from './category-type.enum';
 import { Category } from './category.model';
 
 @Injectable({

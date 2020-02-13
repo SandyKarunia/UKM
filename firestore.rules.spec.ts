@@ -51,17 +51,17 @@ afterAll(async () => {
 });
 
 describe('Firestore Rules', () => {
-  let userAVerified = { uid: null, token: { email_verified: true } };
-  let userANotVerified = { uid: null, token: { email_verified: false } };
-  let userB = { uid: null, token: { email_verified: true } };
+  let userAVerified = { uid: null, email_verified: true };
+  let userANotVerified = { uid: null, email_verified: false };
+  let userB = { uid: null, email_verified: true };
   let dbRefUserAVerified = authedApp(null);
   let dbRefUserANotVerified = authedApp(null);
   let dbRefUserB = authedApp(null);
 
   beforeEach(() => {
-    userAVerified.uid = uuidv4();
-    userANotVerified.uid = userAVerified.uid;
-    userB.uid = uuidv4();
+    userAVerified = { uid: uuidv4(), email_verified: true };
+    userANotVerified = { uid: userAVerified.uid, email_verified: false };
+    userB = { uid: uuidv4(), email_verified: true };
     dbRefUserAVerified = authedApp(userAVerified);
     dbRefUserANotVerified = authedApp(userANotVerified);
     dbRefUserB = authedApp(userB);
