@@ -2,16 +2,16 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { AuthComponent } from './auth.component';
 import { ButtonLoginComponent } from './button-login.component';
+import { ButtonLogoutComponent } from './button-logout.component';
 
 @NgModule({
-  declarations: [AuthComponent, ButtonLoginComponent],
+  declarations: [ButtonLoginComponent, ButtonLogoutComponent],
   imports: [
     CommonModule,
     MatButtonModule,
     MatCardModule,
   ],
-  exports: [AuthComponent, ButtonLoginComponent],
+  exports: [ButtonLoginComponent, ButtonLogoutComponent],
 })
 export class AuthModule { }

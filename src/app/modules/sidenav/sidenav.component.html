@@ -1,0 +1,27 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item class="sideNavHeader">
+        <h2>
+          Name
+        </h2>
+      </mat-list-item>
+      <a mat-list-item href='app/dashboard'>
+        Dashboard
+      </a>
+      <a mat-list-item href='app/wallet'>
+        Wallet
+      </a>
+      <a mat-list-item href='app/category'>
+        Category
+      </a>
+      <ukm-button-logout></ukm-button-logout>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet>
+    </router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

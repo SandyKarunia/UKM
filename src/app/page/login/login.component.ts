@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/auth/auth.service';
 
@@ -18,8 +17,9 @@ export class LoginPageComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    if (!this.auth.isLoggedIn()) {
-      await this.router.navigateByUrl('/dashboard');
+    if (this.auth.isLoggedIn()) {
+      console.log('navigating to dashboard');
+      await this.router.navigateByUrl('/app/dashboard');
     }
   }
 }

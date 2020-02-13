@@ -2,26 +2,29 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { RouterTestingModule } from '@angular/router/testing';
+import { routes } from 'src/app/app-routing.module';
 import { environment } from 'src/environments/environment';
-import { AuthComponent } from './auth.component';
+import { ButtonLogoutComponent } from './button-logout.component';
 
-describe('AuthComponent', () => {
-  let component: AuthComponent;
-  let fixture: ComponentFixture<AuthComponent>;
+describe('ButtonLogoutComponent', (): void => {
+  let component: ButtonLogoutComponent;
+  let fixture: ComponentFixture<ButtonLogoutComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
-      declarations: [AuthComponent],
+      declarations: [ButtonLogoutComponent],
       imports: [
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
+        RouterTestingModule.withRoutes(routes),
       ]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthComponent);
+    fixture = TestBed.createComponent(ButtonLogoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
