@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/modules/auth/auth.service';
 
 @Component({
   selector: 'ukm-app-sidenav',
@@ -8,19 +6,20 @@ import { AuthService } from 'src/app/modules/auth/auth.service';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
-  private readonly authService: AuthService;
-  private readonly router: Router;
-  constructor(authService: AuthService, router: Router) {
-    this.authService = authService;
-    this.router = router;
+  // private readonly authService: AuthService;
+  // private readonly router: Router;
+  constructor() {
+    // this.authService = authService;
+    // this.router = router;
 
-    if (!this.authService.isLoggedIn()) {
-      this.router.navigateByUrl('/')
-        .catch((): void => {
-          // For now just console.log
-          console.log('failed to navigate to login page');
-        });
-    }
+    // if (!this.authService.isLoggedIn()) {
+    //   console.log('check');
+    //   this.router.navigateByUrl('/')
+    //     .catch((): void => {
+    //       // For now just console.log
+    //       console.log('failed to navigate to login page');
+    //     });
+    // }
   }
 
 }

@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard/auth-guard.module';
 
 // UKM Modules
 import { AngularFireModule } from '@angular/fire';
@@ -41,6 +42,7 @@ import { PageModule } from './page/page.module';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    AngularFireAuthGuardModule,
 
     // UKM modules
     AuthModule,
