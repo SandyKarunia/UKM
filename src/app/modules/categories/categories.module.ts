@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { CategoryComponent } from './category/category.component';
 
 @NgModule({
-  declarations: [ CategoryComponent ],
+  declarations: [CategoryComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ],
-  exports: [ CategoryComponent ]
+  exports: [CategoryComponent]
 })
 export class CategoriesModule { }

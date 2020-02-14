@@ -1,3 +1,4 @@
+// tslint:disable
 const firebase = require('@firebase/testing');
 const fs = require('fs');
 const uuidv4 = require('uuid/v4');
@@ -50,70 +51,82 @@ afterAll(async () => {
 });
 
 describe('Firestore Rules', () => {
-  let userA = {uid: null};
-  let userB = {uid: null};
-  let dbRefUserA = authedApp(null);
+  let userAVerified = { uid: null, email_verified: true };
+  let userANotVerified = { uid: null, email_verified: false };
+  let userB = { uid: null, email_verified: true };
+  let dbRefUserAVerified = authedApp(null);
+  let dbRefUserANotVerified = authedApp(null);
   let dbRefUserB = authedApp(null);
 
   beforeEach(() => {
-    userA = {uid: uuidv4()};
-    userB = {uid: uuidv4()};
-    dbRefUserA = authedApp(userA);
+    userAVerified = { uid: uuidv4(), email_verified: true };
+    userANotVerified = { uid: userAVerified.uid, email_verified: false };
+    userB = { uid: uuidv4(), email_verified: true };
+    dbRefUserAVerified = authedApp(userAVerified);
+    dbRefUserANotVerified = authedApp(userANotVerified);
     dbRefUserB = authedApp(userB);
   });
 
   describe('Categories', () => {
     it('requires authorized user to read / update a category', async () => {
-      const ref = await dbRefUserA.collection(collUsers).doc(userA.uid).collection(collCategories).add({});
-      await firebase.assertSucceeds(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collCategories).doc(ref.id).get());
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collCategories).doc(ref.id).get());
+      const ref = await dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collCategories).add({});
+      await firebase.assertSucceeds(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collCategories).doc(ref.id).get());
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collCategories).doc(ref.id).get())
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collCategories).doc(ref.id).get());
     });
     it('requires authorized user to create a new category', async () => {
-      await firebase.assertSucceeds(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collCategories).add({}));
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collCategories).add({}));
+      await firebase.assertSucceeds(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collCategories).add({}));
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collCategories).add({}));
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collCategories).add({}));
     });
     it('should prevent any user from deleting a category', async () => {
-      const ref = await dbRefUserA.collection(collUsers).doc(userA.uid).collection(collCategories).add({});
+      const ref = await dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collCategories).add({});
       await firebase.assertFails(ref.delete());
-      await firebase.assertFails(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collCategories).doc(ref.id).delete());
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collCategories).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collCategories).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collCategories).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collCategories).doc(ref.id).delete());
     });
   });
 
   describe('Wallets', () => {
     it('requires authorized user to read / update a wallet', async () => {
-      const ref = await dbRefUserA.collection(collUsers).doc(userA.uid).collection(collWallets).add({});
-      await firebase.assertSucceeds(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collWallets).doc(ref.id).get());
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collWallets).doc(ref.id).get());
+      const ref = await dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collWallets).add({});
+      await firebase.assertSucceeds(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collWallets).doc(ref.id).get());
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collWallets).doc(ref.id).get());
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collWallets).doc(ref.id).get());
     });
     it('requires authorized user to create a new wallet', async () => {
-      await firebase.assertSucceeds(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collWallets).add({}));
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collWallets).add({}));
+      await firebase.assertSucceeds(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collWallets).add({}));
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collWallets).add({}));
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collWallets).add({}));
     });
     it('should prevent any user from deleting a wallet', async () => {
-      const ref = await dbRefUserA.collection(collUsers).doc(userA.uid).collection(collWallets).add({});
+      const ref = await dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collWallets).add({});
       await firebase.assertFails(ref.delete());
-      await firebase.assertFails(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collWallets).doc(ref.id).delete());
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collWallets).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collWallets).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collWallets).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collWallets).doc(ref.id).delete());
     });
   });
 
   describe('Transactions', () => {
     it('requires authorized user to read / update a transaction', async () => {
-      const ref = await dbRefUserA.collection(collUsers).doc(userA.uid).collection(collTransactions).add({});
-      await firebase.assertFails(ref.delete());
-      await firebase.assertFails(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collTransactions).doc(ref.id).delete());
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collTransactions).doc(ref.id).delete());
+      const ref = await dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).add({});
+      await firebase.assertSucceeds(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).doc(ref.id).get());
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).doc(ref.id).get());
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).doc(ref.id).get());
     });
     it('requires authorized user to create a new transaction', async () => {
-      await firebase.assertSucceeds(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collTransactions).add({}));
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collTransactions).add({}));
+      await firebase.assertSucceeds(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).add({}));
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).add({}));
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).add({}));
     });
     it('should prevent any user from deleting a transaction', async () => {
-      const ref = await dbRefUserA.collection(collUsers).doc(userA.uid).collection(collTransactions).add({});
+      const ref = await dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).add({});
       await firebase.assertFails(ref.delete());
-      await firebase.assertFails(dbRefUserA.collection(collUsers).doc(userA.uid).collection(collTransactions).doc(ref.id).delete());
-      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userA.uid).collection(collTransactions).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserAVerified.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserANotVerified.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).doc(ref.id).delete());
+      await firebase.assertFails(dbRefUserB.collection(collUsers).doc(userAVerified.uid).collection(collTransactions).doc(ref.id).delete());
     });
   });
 });
