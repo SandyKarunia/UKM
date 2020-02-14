@@ -86,10 +86,10 @@ export class Category {
   /**
    * Creates a new instance of {@link Category} from {@link firestore.DocumentSnapshot}.
    */
-  public static fromFirestoreData(snapshot: firestore.DocumentSnapshot): Category | undefined {
+  public static fromFirestoreData(snapshot: firestore.DocumentSnapshot): Category {
     const data: firestore.DocumentData | undefined = snapshot.data();
-    if (data === undefined) {
-      return undefined;
+    if (typeof data === 'undefined') {
+      throw new Error(`data for category document with id = '${snapshot.id}' is undefined`);
     }
 
     const res: Category = new Category(data.type, data.parentCategoryId, data.name, data.description, data.isDeleted);
