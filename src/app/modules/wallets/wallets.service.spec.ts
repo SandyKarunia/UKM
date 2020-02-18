@@ -5,10 +5,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { WalletsService } from './wallets.service';
 
-describe('WalletsService', () => {
+describe('WalletsService', (): void => {
   let service: WalletsService;
 
-  beforeEach(() => {
+  beforeEach((): void => {
     TestBed.configureTestingModule({
       imports: [
         AngularFireModule.initializeApp({}),
@@ -19,7 +19,7 @@ describe('WalletsService', () => {
     service = TestBed.inject(WalletsService);
   });
 
-  it('should be created', async () => {
+  it('should be created', async (): Promise<void> => {
     await expect(service)
       .toBeTruthy();
   });

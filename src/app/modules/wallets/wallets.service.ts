@@ -59,7 +59,7 @@ export class WalletsService {
       .toPromise();
 
     const res: Wallet[] = [];
-    querySnapshot.forEach((doc: firestore.QueryDocumentSnapshot) => {
+    querySnapshot.forEach((doc: firestore.QueryDocumentSnapshot): void => {
       if (!doc.exists) {
         console.error(`data for wallet document with id = '${doc.id}' doesn't exist, but queried`);
 

@@ -66,7 +66,7 @@ export class CategoriesService {
   async getAllChildrenCategoriesOf(parentCategoryId: string): Promise<Category[]> {
     const querySnapshot: firestore.QuerySnapshot = await this._db.collection(USERS)
       .doc(this._afAuth.auth.currentUser?.uid)
-      .collection(CATEGORIES, (ref: firestore.CollectionReference) => {
+      .collection(CATEGORIES, (ref: firestore.CollectionReference): firestore.Query => {
         if (!parentCategoryId) {
           return ref.where('parentCategoryId', 'in', ['', 0, undefined]);
         }
@@ -77,7 +77,7 @@ export class CategoriesService {
       .toPromise();
 
     const res: Category[] = [];
-    querySnapshot.forEach((doc: firestore.QueryDocumentSnapshot) => {
+    querySnapshot.forEach((doc: firestore.QueryDocumentSnapshot): void => {
       if (!doc.exists) {
         console.error(`data for category document with id = '${doc.id}' doesn't exist, but queried`);
 

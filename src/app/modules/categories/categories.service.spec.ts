@@ -9,7 +9,7 @@ import { CategoriesService } from './categories.service';
 describe('CategoriesService', () => {
   let service: CategoriesService;
 
-  beforeEach(() => {
+  beforeEach((): void => {
     TestBed.configureTestingModule({
       imports: [
         AngularFireModule.initializeApp(environment.firebase),
@@ -20,7 +20,7 @@ describe('CategoriesService', () => {
     service = TestBed.inject(CategoriesService);
   });
 
-  it('should be created', async () => {
+  it('should be created', async (): Promise<void> => {
     await expect(service)
       .toBeTruthy();
   });
