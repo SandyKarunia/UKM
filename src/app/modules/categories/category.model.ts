@@ -10,12 +10,12 @@ export class Category {
   private _description: string;
   private _isDeleted: boolean;
 
-  constructor(type: CategoryType, parentCategoryId: string, name: string, description: string, isDeleted: boolean) {
+  constructor(type: CategoryType, parentCategoryId: string, name: string, description: string) {
     this._type = type;
     this._parentCategoryId = parentCategoryId;
     this._name = name;
     this._description = description;
-    this._isDeleted = isDeleted;
+    this._isDeleted = false;
   }
 
   /**
@@ -26,7 +26,7 @@ export class Category {
   }
 
   /**
-   * Type of this category which might be useful to group some categories in summary (e.g. group all INCOME category).
+   * Type of the category which might be useful to group some categories in summary (e.g. group all INCOME category).
    * For available types list, see {@link CategoryType}.
    */
   public get type(): CategoryType {
@@ -73,7 +73,7 @@ export class Category {
   }
 
   /**
-   * A flag which determines whether this category is active or not.
+   * A flag which determines whether the category is active or not.
    * When the user is deleting the category, it will flip this flag from {@code false} to {@code true} (soft-delete).
    */
   public get isDeleted(): boolean {
@@ -92,8 +92,9 @@ export class Category {
       throw new Error(`data for category document with id = '${snapshot.id}' is undefined`);
     }
 
-    const res: Category = new Category(data.type, data.parentCategoryId, data.name, data.description, data.isDeleted);
+    const res: Category = new Category(data.type, data.parentCategoryId, data.name, data.description);
     res._id = snapshot.id;
+    res._isDeleted = data.isDeleted;
 
     return res;
   }

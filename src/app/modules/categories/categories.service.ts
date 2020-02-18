@@ -11,12 +11,12 @@ const CATEGORIES: string = 'categories';
   providedIn: 'root'
 })
 export class CategoriesService {
-  private readonly db: AngularFirestore;
-  private readonly afAuth: AngularFireAuth;
+  private readonly _db: AngularFirestore;
+  private readonly _afAuth: AngularFireAuth;
 
   constructor(db: AngularFirestore, afAuth: AngularFireAuth) {
-    this.db = db;
-    this.afAuth = afAuth;
+    this._db = db;
+    this._afAuth = afAuth;
   }
 
   /**
@@ -24,12 +24,11 @@ export class CategoriesService {
    * {@param category}.
    *
    * @param category instance of {@link Category} to be saved into firestore
-   * @returns new instance of {@link Category} if successful with its id filled,
-   * {@code undefined} otherwise
+   * @returns new instance of {@link Category} with its id filled
    */
   async createNewCategory(category: Category): Promise<Category> {
-    const docRef: firestore.DocumentReference = await this.db.collection(USERS)
-      .doc(this.afAuth.auth.currentUser?.uid)
+    const docRef: firestore.DocumentReference = await this._db.collection(USERS)
+      .doc(this._afAuth.auth.currentUser?.uid)
       .collection(CATEGORIES)
       .add(category.toFirestoreData());
 
@@ -43,8 +42,8 @@ export class CategoriesService {
    * @param category instance of {@link Category} to be updated in firestore
    */
   async updateCategory(category: Category): Promise<void> {
-    await this.db.collection(USERS)
-      .doc(this.afAuth.auth.currentUser?.uid)
+    await this._db.collection(USERS)
+      .doc(this._afAuth.auth.currentUser?.uid)
       .collection(CATEGORIES)
       .doc(category.id)
       .update(category.toFirestoreData());
@@ -65,8 +64,8 @@ export class CategoriesService {
    * be returned
    */
   async getAllChildrenCategoriesOf(parentCategoryId: string): Promise<Category[]> {
-    const querySnapshot: firestore.QuerySnapshot = await this.db.collection(USERS)
-      .doc(this.afAuth.auth.currentUser?.uid)
+    const querySnapshot: firestore.QuerySnapshot = await this._db.collection(USERS)
+      .doc(this._afAuth.auth.currentUser?.uid)
       .collection(CATEGORIES, (ref: firestore.CollectionReference) => {
         if (!parentCategoryId) {
           return ref.where('parentCategoryId', 'in', ['', 0, undefined]);
