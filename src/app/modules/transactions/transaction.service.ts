@@ -59,7 +59,7 @@ export class TransactionsService {
             .toPromise();
 
         const res: Transaction[] = [];
-        querySnapshot.forEach((doc: firestore.QueryDocumentSnapshot) => {
+        querySnapshot.forEach((doc: firestore.QueryDocumentSnapshot): void => {
             if (!doc.exists) {
                 console.error(`data for transaction document with id = '${doc.id}' doesn't exist, but queried`);
 
