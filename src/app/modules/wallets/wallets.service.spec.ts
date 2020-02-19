@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 import { WalletsService } from './wallets.service';
 
 describe('WalletsService', (): void => {
@@ -11,7 +12,7 @@ describe('WalletsService', (): void => {
   beforeEach((): void => {
     TestBed.configureTestingModule({
       imports: [
-        AngularFireModule.initializeApp({}),
+        AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
         AngularFirestoreModule,
       ]
