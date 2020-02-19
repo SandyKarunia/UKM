@@ -2,11 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WalletShowPageComponent } from './wallet-show-page.component';
 
-describe('WalletShowPageComponent', () => {
+describe('WalletShowPageComponent', (): void => {
   let component: WalletShowPageComponent;
   let fixture: ComponentFixture<WalletShowPageComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
       declarations: [WalletShowPageComponent]
     })
