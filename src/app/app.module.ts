@@ -20,6 +20,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { DashboardsModule } from './modules/dashboards/dashboards.module';
 import { SidenavModule } from './modules/sidenav/sidenav.module';
+import { TransactionsModule } from './modules/transactions/transactions.module';
 import { WalletsModule } from './modules/wallets/wallets.module';
 import { PageModule } from './page/page.module';
 
@@ -45,9 +46,10 @@ import { PageModule } from './page/page.module';
     AuthModule,
     CategoriesModule,
     DashboardsModule,
-    WalletsModule,
     PageModule,
-    SidenavModule
+    SidenavModule,
+    TransactionsModule,
+    WalletsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -4,10 +4,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-import { CategoriesService } from './categories.service';
+import { WalletsService } from './wallets.service';
 
-describe('CategoriesService', () => {
-  let service: CategoriesService;
+describe('WalletsService', (): void => {
+  let service: WalletsService;
 
   beforeEach((): void => {
     TestBed.configureTestingModule({
@@ -17,7 +17,7 @@ describe('CategoriesService', () => {
         AngularFirestoreModule,
       ]
     });
-    service = TestBed.inject(CategoriesService);
+    service = TestBed.inject(WalletsService);
   });
 
   it('should be created', async (): Promise<void> => {
