@@ -17,7 +17,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-import { AuthModule } from './modules/auth/auth.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { DashboardsModule } from './modules/dashboards/dashboards.module';
 import { SidenavModule } from './modules/sidenav/sidenav.module';
@@ -45,7 +44,6 @@ import { PageModule } from './page/page.module';
     AngularFireAuthGuardModule,
 
     // UKM modules
-    AuthModule,
     CategoriesModule,
     DashboardsModule,
     PageModule,
