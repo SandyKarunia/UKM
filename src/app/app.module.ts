@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
@@ -16,7 +17,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-import { AuthModule } from './modules/auth/auth.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { DashboardsModule } from './modules/dashboards/dashboards.module';
 import { SidenavModule } from './modules/sidenav/sidenav.module';
@@ -41,9 +41,9 @@ import { PageModule } from './page/page.module';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    AngularFireAuthGuardModule,
 
     // UKM modules
-    AuthModule,
     CategoriesModule,
     DashboardsModule,
     PageModule,
