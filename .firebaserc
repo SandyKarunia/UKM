@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "uangkukemana"
+    "default": "uangkukemana",
+    "development": "uangkukemana-dev"
   }
 }
