@@ -9,10 +9,4 @@ export class AuthService {
   constructor(afAuth: AngularFireAuth) {
     this.afAuth = afAuth;
   }
-
-  // isLoggedIn(): boolean {
-  //   console.log(this.afAuth.auth.currentUser);
-
-  //   return this.afAuth.auth.currentUser !== null;
-  // }
 }

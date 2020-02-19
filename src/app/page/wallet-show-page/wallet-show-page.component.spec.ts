@@ -1,17 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WalletPageComponent } from './wallet.component';
+import { WalletShowPageComponent } from './wallet-show-page.component';
 
 describe('WalletShowPageComponent', () => {
   let component: WalletShowPageComponent;
   let fixture: ComponentFixture<WalletShowPageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [WalletShowPageComponent]
     })
       .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WalletShowPageComponent);
@@ -19,7 +19,8 @@ describe('WalletShowPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create', async () => {
+    await expect(component)
+      .toBeTruthy();
   });
 });
