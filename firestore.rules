@@ -5,7 +5,7 @@ service cloud.firestore {
     match /users/{userId} {
 
       function isOwner() {
-        return request.auth.uid == userId && request.auth.token.email_verified;
+        return request.auth.uid == userId;
       }
 
       match /categories/{categoryId} {
