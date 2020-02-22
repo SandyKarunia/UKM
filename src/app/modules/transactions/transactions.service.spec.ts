@@ -14,7 +14,7 @@ describe('TransactionsService', (): void => {
     let _afAuth: AngularFireAuth;
     let _uid: string;
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
         TestBed.configureTestingModule({
             imports: [
                 AngularFireModule.initializeApp(environment.firebase),
@@ -41,8 +41,8 @@ describe('TransactionsService', (): void => {
         return Transaction.fromFirestoreData(docSnapshot);
     };
 
-    describe('createNewTransaction', async () => {
-        it('should create new transaction', async () => {
+    describe('createNewTransaction', async (): Promise<void> => {
+        it('should create new transaction', async (): Promise<void> => {
             const createdTransaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
 
@@ -56,8 +56,8 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('updateTransaction', async () => {
-        it('should update the transaction', async () => {
+    describe('updateTransaction', async (): Promise<void> => {
+        it('should update the transaction', async (): Promise<void> => {
             const createdTransaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
 
@@ -71,8 +71,8 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('getAllTransactions', async () => {
-        it('should get all transactions', async () => {
+    describe('getAllTransactions', async (): Promise<void> => {
+        it('should get all transactions', async (): Promise<void> => {
             const transaction1: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
             const transaction2: Transaction =
@@ -91,8 +91,8 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('softDeleteTransaction', async () => {
-        it('should soft-delete the passed transaction', async () => {
+    describe('softDeleteTransaction', async (): Promise<void> => {
+        it('should soft-delete the passed transaction', async (): Promise<void> => {
             const transaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
 

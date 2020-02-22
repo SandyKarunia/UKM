@@ -12,7 +12,7 @@ describe('LoginPageComponent', () => {
   let component: LoginPageComponent;
   let fixture: ComponentFixture<LoginPageComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
       declarations: [LoginPageComponent],
       imports: [
@@ -31,7 +31,7 @@ describe('LoginPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', async () => {
+  it('should create', async (): Promise<void> => {
     await expect(component)
       .toBeTruthy();
   });

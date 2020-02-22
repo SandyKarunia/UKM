@@ -19,7 +19,7 @@ describe('SidenavComponent', () => {
   let component: SidenavComponent;
   let fixture: ComponentFixture<SidenavComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
       declarations: [SidenavComponent],
       imports: [
@@ -45,7 +45,7 @@ describe('SidenavComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', async () => {
+  it('should create', async (): Promise<void> => {
     await expect(component)
       .toBeTruthy();
   });

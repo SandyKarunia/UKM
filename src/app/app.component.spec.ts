@@ -9,7 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
@@ -27,14 +27,14 @@ describe('AppComponent', () => {
       .compileComponents();
   });
 
-  it('should create the app', async () => {
+  it('should create the app', async (): Promise<void> => {
     const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
     const app: AppComponent = fixture.debugElement.componentInstance;
     await expect(app)
       .toBeTruthy();
   });
 
-  it(`should have as title 'ukm'`, async () => {
+  it(`should have as title 'ukm'`, async (): Promise<void> => {
     const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
     const app: AppComponent = fixture.debugElement.componentInstance;
     await expect(app.title)

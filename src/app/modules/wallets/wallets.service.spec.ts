@@ -14,7 +14,7 @@ describe('WalletsService', (): void => {
   let _afAuth: AngularFireAuth;
   let _uid: string;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     TestBed.configureTestingModule({
       imports: [
         AngularFireModule.initializeApp(environment.firebase),
@@ -41,8 +41,8 @@ describe('WalletsService', (): void => {
     return Wallet.fromFirestoreData(docSnapshot);
   };
 
-  describe('createNewWallet', async () => {
-    it('should create new wallet', async () => {
+  describe('createNewWallet', async (): Promise<void> => {
+    it('should create new wallet', async (): Promise<void> => {
       const createdWallet: Wallet =
         await _underTest.createNewWallet(new Wallet('abc', -1, 1, 'SGD'));
 
@@ -56,8 +56,8 @@ describe('WalletsService', (): void => {
     });
   });
 
-  describe('updateWallet', async () => {
-    it('should update the wallet', async () => {
+  describe('updateWallet', async (): Promise<void> => {
+    it('should update the wallet', async (): Promise<void> => {
       const createdWallet: Wallet =
         await _underTest.createNewWallet(new Wallet('abc', -1, 1, 'SGD'));
 
@@ -71,8 +71,8 @@ describe('WalletsService', (): void => {
     });
   });
 
-  describe('getAllWallets', async () => {
-    it('should get all wallets', async () => {
+  describe('getAllWallets', async (): Promise<void> => {
+    it('should get all wallets', async (): Promise<void> => {
       const wallet1: Wallet =
         await _underTest.createNewWallet(new Wallet('abc', -1, 1, 'SGD'));
       const wallet2: Wallet =
@@ -91,8 +91,8 @@ describe('WalletsService', (): void => {
     });
   });
 
-  describe('softDeleteWallet', async () => {
-    it('should soft-delete the passed wallet', async () => {
+  describe('softDeleteWallet', async (): Promise<void> => {
+    it('should soft-delete the passed wallet', async (): Promise<void> => {
       const wallet: Wallet =
         await _underTest.createNewWallet(new Wallet('abc', -1, 1, 'SGD'));
 

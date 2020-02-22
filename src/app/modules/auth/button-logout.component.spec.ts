@@ -31,7 +31,7 @@ describe('ButtonLogoutComponent', (): void => {
     fixture.detectChanges();
   });
 
-  it('should create', async () => {
+  it('should create', async (): Promise<void> => {
     await expect(component)
       .toBeTruthy();
   });
