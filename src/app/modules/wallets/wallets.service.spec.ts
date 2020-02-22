@@ -82,7 +82,7 @@ describe('WalletsService', (): void => {
 
       let containWallet1: boolean = false;
       let containWallet2: boolean = false;
-      result.forEach((w: Wallet) => {
+      result.forEach((w: Wallet): void => {
         if (w.id === wallet1.id) { containWallet1 = true; }
         if (w.id === wallet2.id) { containWallet2 = true; }
       });
