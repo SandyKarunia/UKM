@@ -41,7 +41,7 @@ describe('WalletsService', (): void => {
     return Wallet.fromFirestoreData(docSnapshot);
   };
 
-  describe('createNewWallet', async (): Promise<void> => {
+  describe('createNewWallet', () => {
     it('should create new wallet', async (): Promise<void> => {
       const createdWallet: Wallet =
         await _underTest.createNewWallet(new Wallet('abc', -1, 1, 'SGD'));
@@ -56,7 +56,7 @@ describe('WalletsService', (): void => {
     });
   });
 
-  describe('updateWallet', async (): Promise<void> => {
+  describe('updateWallet', () => {
     it('should update the wallet', async (): Promise<void> => {
       const createdWallet: Wallet =
         await _underTest.createNewWallet(new Wallet('abc', -1, 1, 'SGD'));
@@ -71,7 +71,7 @@ describe('WalletsService', (): void => {
     });
   });
 
-  describe('getAllWallets', async (): Promise<void> => {
+  describe('getAllWallets', () => {
     it('should get all wallets', async (): Promise<void> => {
       const wallet1: Wallet =
         await _underTest.createNewWallet(new Wallet('abc', -1, 1, 'SGD'));
@@ -91,7 +91,7 @@ describe('WalletsService', (): void => {
     });
   });
 
-  describe('softDeleteWallet', async (): Promise<void> => {
+  describe('softDeleteWallet', () => {
     it('should soft-delete the passed wallet', async (): Promise<void> => {
       const wallet: Wallet =
         await _underTest.createNewWallet(new Wallet('abc', -1, 1, 'SGD'));

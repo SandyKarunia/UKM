@@ -41,7 +41,7 @@ describe('TransactionsService', (): void => {
         return Transaction.fromFirestoreData(docSnapshot);
     };
 
-    describe('createNewTransaction', async (): Promise<void> => {
+    describe('createNewTransaction', () => {
         it('should create new transaction', async (): Promise<void> => {
             const createdTransaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
@@ -56,7 +56,7 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('updateTransaction', async (): Promise<void> => {
+    describe('updateTransaction', () => {
         it('should update the transaction', async (): Promise<void> => {
             const createdTransaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
@@ -71,7 +71,7 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('getAllTransactions', async (): Promise<void> => {
+    describe('getAllTransactions', () => {
         it('should get all transactions', async (): Promise<void> => {
             const transaction1: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
@@ -91,7 +91,7 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('softDeleteTransaction', async (): Promise<void> => {
+    describe('softDeleteTransaction', () => {
         it('should soft-delete the passed transaction', async (): Promise<void> => {
             const transaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
