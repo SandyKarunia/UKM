@@ -41,7 +41,7 @@ describe('TransactionsService', (): void => {
         return Transaction.fromFirestoreData(docSnapshot);
     };
 
-    describe('createNewTransaction', () => {
+    describe('createNewTransaction', (): void => {
         it('should create new transaction', async (): Promise<void> => {
             const createdTransaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
@@ -56,7 +56,7 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('updateTransaction', () => {
+    describe('updateTransaction', (): void => {
         it('should update the transaction', async (): Promise<void> => {
             const createdTransaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
@@ -71,7 +71,7 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('getAllTransactions', () => {
+    describe('getAllTransactions', (): void => {
         it('should get all transactions', async (): Promise<void> => {
             const transaction1: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));
@@ -82,7 +82,7 @@ describe('TransactionsService', (): void => {
 
             let containTransaction1: boolean = false;
             let containTransaction2: boolean = false;
-            result.forEach((t: Transaction) => {
+            result.forEach((t: Transaction): void => {
                 if (t.id === transaction1.id) { containTransaction1 = true; }
                 if (t.id === transaction2.id) { containTransaction2 = true; }
             });
@@ -91,7 +91,7 @@ describe('TransactionsService', (): void => {
         });
     });
 
-    describe('softDeleteTransaction', () => {
+    describe('softDeleteTransaction', (): void => {
         it('should soft-delete the passed transaction', async (): Promise<void> => {
             const transaction: Transaction =
                 await _underTest.createNewTransaction(new Transaction(-1, 'walletid', 'catid', 'the notes'));

@@ -42,7 +42,7 @@ describe('CategoriesService', () => {
     return Category.fromFirestoreData(docSnapshot);
   };
 
-  describe('createNewCategory', () => {
+  describe('createNewCategory', (): void => {
     it('should create successfully', async (): Promise<void> => {
       const createdCategory: Category =
         await _underTest.createNewCategory(new Category(CategoryType.TRANSFER_IN, '', 'new category', 'desc category'));
@@ -57,7 +57,7 @@ describe('CategoriesService', () => {
     });
   });
 
-  describe('updateCategory', () => {
+  describe('updateCategory', (): void => {
     it('should update successfully', async (): Promise<void> => {
       const createdCategory: Category =
         await _underTest.createNewCategory(new Category(CategoryType.INCOME, '', 'new category', 'desc category'));
@@ -70,7 +70,7 @@ describe('CategoriesService', () => {
     });
   });
 
-  describe('getAllRootCategories', () => {
+  describe('getAllRootCategories', (): void => {
     it('should get all root categories', async (): Promise<void> => {
       const rootCategory: Category =
         await _underTest.createNewCategory(new Category(CategoryType.EXPENSE, '', 'root category', 'desc'));
@@ -85,7 +85,7 @@ describe('CategoriesService', () => {
     });
   });
 
-  describe('getAllChildrenCategoriesOf', () => {
+  describe('getAllChildrenCategoriesOf', (): void => {
     it('should get all children categories of specified id', async (): Promise<void> => {
       const rootCategory: Category =
         await _underTest.createNewCategory(new Category(CategoryType.TRANSFER_IN, '', 'root category', 'desc'));
@@ -107,7 +107,7 @@ describe('CategoriesService', () => {
     });
   });
 
-  describe('softDeleteCategory', () => {
+  describe('softDeleteCategory', (): void => {
     it('should soft-delete the passed category', async (): Promise<void> => {
       const category: Category =
         await _underTest.createNewCategory(new Category(CategoryType.EXPENSE, '', 'category', 'desc'));
