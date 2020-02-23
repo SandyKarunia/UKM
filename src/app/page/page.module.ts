@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { MatGridListModule } from '@angular/material/grid-list';
+import { CardModule } from 'src/app/modules/card/card.module';
 import { LoginPageComponent } from './login/login.component';
 import { WalletShowPageComponent } from './wallet-show-page/wallet-show-page.component';
 
@@ -15,7 +17,9 @@ import { AuthModule } from 'src/app/modules/auth/auth.module';
   imports: [
     CommonModule,
     AuthModule,
-    RouterModule
+    RouterModule,
+    CardModule,
+    MatGridListModule
   ],
   exports: [
     LoginPageComponent,

@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class WalletShowPageComponent {
 
+  public allWallet: string[];
+  constructor() {
+    this.allWallet = [];
+    const totalWallet: number = 10;
+    this.allWallet.push('+');
+    for (let i: number = 0; i < totalWallet; i += 1) {
+      this.allWallet.push('wallet');
+    }
+  }
 }
