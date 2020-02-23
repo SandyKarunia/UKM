@@ -7,13 +7,17 @@ import { Component } from '@angular/core';
 })
 export class WalletShowPageComponent {
 
-  public allWallet: string[];
+  public allWallets: string[];
+
   constructor() {
-    this.allWallet = [];
+    this.allWallets = [];
+
+    // TODO: remove dummy data
     const totalWallet: number = 10;
-    this.allWallet.push('+');
     for (let i: number = 0; i < totalWallet; i += 1) {
-      this.allWallet.push('wallet');
+      this.allWallets.push('wallet');
     }
+
+    this.allWallets.push('+');
   }
 }
