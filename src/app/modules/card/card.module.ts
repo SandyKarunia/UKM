@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { MatCardModule } from '@angular/material/card';
-import { CardComponent } from './card.component';
+import { BaseCardComponent } from './base-card.component';
 
 @NgModule({
-  declarations: [CardComponent],
+  declarations: [BaseCardComponent],
   imports: [
     CommonModule,
     MatCardModule,
   ],
-  exports: [CardComponent],
+  exports: [BaseCardComponent],
 })
 export class CardModule { }

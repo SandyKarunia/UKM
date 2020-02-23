@@ -3,8 +3,8 @@
 </h1>
 
 <mat-grid-list cols="6" rowHeight="100px">
-  <mat-grid-tile *ngFor="let wallet of allWallet" colSpan="1">
-    <ukm-std-card value={{wallet}}>
-    </ukm-std-card>
+  <mat-grid-tile *ngFor="let wallet of allWallet" colSpan="1" class="wallet-tile">
+    <ukm-base-card value={{wallet}}>
+    </ukm-base-card>
   </mat-grid-tile>
 </mat-grid-list>
