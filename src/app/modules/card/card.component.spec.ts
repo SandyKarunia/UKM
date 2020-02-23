@@ -13,13 +13,13 @@ describe('CardComponent', (): void => {
       .compileComponents();
   });
 
-  beforeEach(() => {
+  beforeEach(async (): Promise<void> => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', async () => {
+  it('should create', async (): Promise<void> => {
     await expect(component)
       .toBeTruthy();
   });
