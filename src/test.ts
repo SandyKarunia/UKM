@@ -19,3 +19,6 @@ getTestBed().initTestEnvironment(
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
+
+// Change the default timeout to 30s
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;

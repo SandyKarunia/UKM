@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { firestore } from 'firebase';
+import { firestore } from 'firebase/app';
 import { Category } from './category.model';
 
 const USERS: string = 'users';
@@ -68,7 +68,7 @@ export class CategoriesService {
       .doc(this._afAuth.auth.currentUser?.uid)
       .collection(CATEGORIES, (ref: firestore.CollectionReference): firestore.Query => {
         if (!parentCategoryId) {
-          return ref.where('parentCategoryId', 'in', ['', 0, undefined]);
+          return ref.where('parentCategoryId', '==', '');
         }
 
         return ref.where('parentCategoryId', '==', parentCategoryId);

@@ -1,4 +1,4 @@
-import { firestore } from 'firebase';
+import { firestore } from 'firebase/app';
 import { CategoryType } from './category-type.enum';
 
 export class Category {

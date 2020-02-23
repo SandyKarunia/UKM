@@ -1,4 +1,4 @@
-import { firestore } from 'firebase';
+import { firestore } from 'firebase/app';
 
 export class Wallet {
     private _id: string;
@@ -13,6 +13,7 @@ export class Wallet {
         this._initialBalance = initialBalance;
         this._currentBalance = currentBalance;
         this._currency = currency;
+        this._isDeleted = false;
     }
 
     /**

@@ -61,6 +61,7 @@
         ]
       }
     ],
+    "newline-per-chained-call": false,
     "no-consecutive-blank-lines": true,
     "no-console": [
       true,

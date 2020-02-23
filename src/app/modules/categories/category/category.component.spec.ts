@@ -6,7 +6,7 @@ describe('CategoryComponent', () => {
   let component: CategoryComponent;
   let fixture: ComponentFixture<CategoryComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
       declarations: [CategoryComponent]
     })
@@ -19,7 +19,7 @@ describe('CategoryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', async () => {
+  it('should create', async (): Promise<void> => {
     await expect(component)
       .toBeTruthy();
   });

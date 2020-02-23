@@ -11,7 +11,7 @@ describe('ButtonLoginComponent', (): void => {
   let component: ButtonLoginComponent;
   let fixture: ComponentFixture<ButtonLoginComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
       declarations: [ButtonLoginComponent],
       imports: [
@@ -28,7 +28,7 @@ describe('ButtonLoginComponent', (): void => {
     fixture.detectChanges();
   });
 
-  it('should create', async () => {
+  it('should create', async (): Promise<void> => {
     await expect(component)
       .toBeTruthy();
   });
