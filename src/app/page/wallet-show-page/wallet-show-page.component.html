@@ -2,8 +2,8 @@
   Wallet Page
 </h1>
 
-<mat-grid-list cols="6">
-  <mat-grid-tile *ngFor=" let wallet of allWallets" colSpan="1" class="wallet-tile">
+<mat-grid-list cols="6" rowHeight="100">
+  <mat-grid-tile *ngFor="let wallet of allWallets" colSpan="1" class="wallet-tile">
     <ukm-base-card value={{wallet}}>
     </ukm-base-card>
   </mat-grid-tile>
