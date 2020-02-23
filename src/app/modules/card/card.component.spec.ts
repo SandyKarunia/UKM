@@ -13,7 +13,7 @@ describe('CardComponent', (): void => {
       .compileComponents();
   });
 
-  beforeEach(async (): Promise<void> => {
+  beforeEach((): void => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
