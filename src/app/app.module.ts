@@ -10,6 +10,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 
 // UKM Modules
@@ -41,6 +42,7 @@ import { PageModule } from './page/page.module';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    FlexLayoutModule,
     AngularFireAuthGuardModule,
 
     // UKM modules
