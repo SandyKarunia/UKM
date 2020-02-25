@@ -65,6 +65,10 @@ const getIdsFromSnapshot = async (snapshot: firestore.QuerySnapshot<firestore.Do
     return result;
 }
 
+/**
+ * To deploy all the functions listed below, run `firebase deploy --only
+ * functions` in the base folder.
+ */
 module.exports = {
     cleanTestUsers: functions.auth.user().onCreate(cleanAnonUsers),
 };
