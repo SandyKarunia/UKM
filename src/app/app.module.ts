@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
@@ -41,6 +42,7 @@ import { PageModule } from './page/page.module';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    FlexLayoutModule,
     AngularFireAuthGuardModule,
 
     // UKM modules

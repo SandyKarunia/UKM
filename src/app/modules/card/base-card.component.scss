@@ -1,11 +1,10 @@
-.ukm-card{
-  width: 160px;
+mat-card{
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.ukm-card mat-card-content{
+mat-card-content{
   font-size: 24px;
 }
